@@ -1,0 +1,28 @@
+/* Mała paczka prostych mixinów
+
+-- linearGradient - obsługa gradientów po stronie przeglądarki
+
+   użycie: @include linearGradient(kolor_startowy, kolor_końcowy, kąt_gradinetu), czyli
+   linearGradient(black, white, 90deg) da nam prosty czarno-biały gradient w pionie.
+
+-- grayscale - dodawanie efektu wyszarzenia na zdjęcia, logotypy itd.
+
+   użycie: @inclide grayscale(procent_nałożenia_szarości), czyli
+   grayscale(100%) da nam pełne, szare zdjęcie/logo
+
+*/
+
+@mixin linearGradient($top, $bottom, $angle){
+    background: $top;
+    background: -moz-linear-gradient($angle,  $top 0%, $bottom 100%);
+    background: -webkit-linear-gradient($angle, $top 0%, $bottom 100%);
+    background: -o-linear-gradient($angle,  $top 0%,$bottom 100%); 
+    background: -ms-linear-gradient($angle,  $top 0%,$bottom 100%);
+}
+
+@mixin grayscale($p) {
+    -moz-filter: grayscale($p);
+ -webkit-filter: grayscale($p);
+      -o-filter: grayscale($p);
+     -ms-filter: grayscale($p);
+}
