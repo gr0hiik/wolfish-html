@@ -1,3 +1,7 @@
+@import '../css/vendor/bootstrap.min';
+@import 'vendor/_mixins';
+@import 'mobile';
+
 body {
     background: white;
     color: #333;
