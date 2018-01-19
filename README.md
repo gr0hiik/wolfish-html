@@ -1,7 +1,6 @@
 
 Wolfish HTML
 ============
-----------
 
 HTML, CSS+Sass, JavaScript+jQuery basic template for static websites.
 

@@ -3,6 +3,7 @@ var minifyCSS = require('gulp-csso');
 var minifyJS = require('gulp-jsmin');
 var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
 
 
 gulp.task('default', [], function(){
@@ -27,4 +28,14 @@ gulp.task('default', [], function(){
     
     console.log('Strona gotowa do wgrania na serwer. Powodzenia!');
     
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
+ 
+gulp.task('sass:watch', function () {
+  gulp.watch('./sass/**/*.scss', ['sass']);
 });
