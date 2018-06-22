@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var minifyCSS = require('gulp-csso');
 var minifyJS = require('gulp-jsmin');
-var imagemin = require('gulp-imagemin');
+var image = require('gulp-imagemin');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 
@@ -12,10 +12,10 @@ gulp.task('default', [], function(){
     gulp.src("./css/*.css").pipe(minifyCSS()).pipe(gulp.dest('deploy/css'));
     
     console.log('Minimalizacja stworzonych plików JS');
-    gulp.src("./js/*.js").pipe(minifyJS()).pipe(rename({suffix: '.min'})).pipe(gulp.dest('deploy/js'));
+    gulp.src("./js/*.js").pipe(minifyJS()).pipe(gulp.dest('deploy/js'));
     
     console.log('Optymalizacja grafik');
-    gulp.src("./img/**/*.*").pipe(imagemin()).pipe(gulp.dest('deploy/img'));
+    gulp.src("./img/**/*.*").pipe(image()).pipe(gulp.dest('deploy/img'));
     
     console.log('Kopiowanie kodu html');
     gulp.src("./*.html").pipe(gulp.dest('deploy'));
