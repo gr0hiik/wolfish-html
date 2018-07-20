@@ -7,11 +7,12 @@ var reload = browsersync.reload;
 
 var minifyCSS = require('gulp-csso');
 var minifyJS = require('gulp-jsmin');
+var minifyHTML = require('gulp-html-minify');
 var image = require('gulp-imagemin');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 
-gulp.task('default', ['sass', 'watch', 'deploy', 'clean']);
+gulp.task('default', ['sass', 'watch', 'deploy', 'clean', 'compress-html']);
 
 // Komplacja samych Sassów
 
@@ -51,7 +52,7 @@ gulp.task('deploy', ['clean'], function() {
     
     // Minifikacja JSów
     gulp.src("./js/*.js").pipe(minifyJS()).pipe(gulp.dest('deploy/js'));
-    
+        
     // Optymalizacja obrazków
     gulp.src("./img/**/*.*").pipe(image([
       image.gifsicle({interlaced: true}),
@@ -66,8 +67,8 @@ gulp.task('deploy', ['clean'], function() {
     ]))
     .pipe(gulp.dest('deploy/img'));
     
-    // Kopiowanie HTMLu
-    gulp.src("./*.html").pipe(gulp.dest('deploy'));
+    // Kopiowanie i minifikacja HTMLu
+    gulp.src("./*.html").pipe(minifyHTML()).pipe(gulp.dest('deploy'));
     
     // Kopiowanie fontów
     gulp.src("./fonts/**/*.*").pipe(gulp.dest('deploy/fonts'));
