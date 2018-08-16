@@ -16,6 +16,7 @@
     "gulp-jsmin": "0.1.5",
     "gulp-rename": "1.2.2",
     "gulp-sass": "3.1.0",
-    "gulp-clean": "0.4.0"
+    "gulp-clean": "0.4.0",
+    "gulp-html-minify": "0.0.14"
   }
 }
