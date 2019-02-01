@@ -7,7 +7,7 @@ var reload = browsersync.reload;
 
 var minifyCSS = require('gulp-csso');
 var minifyJS = require('gulp-jsmin');
-var minifyHTML = require('gulp-html-minify');
+var minifyHTML = require('gulp-htmlmin');
 var image = require('gulp-imagemin');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
@@ -68,7 +68,7 @@ gulp.task('deploy', ['clean'], function() {
     .pipe(gulp.dest('deploy/img'));
     
     // Kopiowanie i minifikacja HTMLu
-    gulp.src("./*.html").pipe(minifyHTML()).pipe(gulp.dest('deploy'));
+    gulp.src("./*.html").pipe(minifyHTML({collapseWhitespace: false})).pipe(gulp.dest('deploy'));
     
     // Kopiowanie fontów
     gulp.src("./fonts/**/*.*").pipe(gulp.dest('deploy/fonts'));
