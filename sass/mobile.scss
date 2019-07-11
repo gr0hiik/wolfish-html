@@ -1,18 +1,42 @@
-@media only screen and (min-width: 1201px) {
-    
+/*! WOLFISH HTML - Basic HTML/CSS/JS template with Bootstrap grid system | For Mobile Devices | Mateusz "michno" Michnowicz | mateusz.michnowicz@gmail.com !*/
+
+@media only screen and (min-width: 1201px) { 
+    .nav {
+        .mm-trigger {
+            display: none;
+        }
+    }
 }
 
-@media only screen and (max-width : 1200px) {
-    
+@media only screen and (max-width : 1200px) {   
+    .nav {
+        .mm-trigger {
+            display: none;
+        }
+    }
 }
 
 @media only screen and (max-width : 1024px) {
-    
+    .nav {
+        .mm-trigger {
+            display: none;
+        }
+    }
+}
 
+@media only screen and (max-width : 823px) {
+    .nav {
+        .mm-trigger { 
+            display: block;
+        }
+    }
 }
 
 @media only screen and (max-width : 480px) {
-
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width : 320px) {

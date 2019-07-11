@@ -79,4 +79,10 @@ gulp.task('deploy', ['clean'], function() {
     // Kopiowanie zew. bibliotek CSS
     gulp.src("./css/vendor/*.css").pipe(gulp.dest('deploy/css/vendor'));
     
+    // Kopiowanie manifestu
+    gulp.src("./manifest.json").pipe(gulp.dest('deploy'));
+
+    // Kopiowanie favicon
+    gulp.src("./favicon.*").pipe(gulp.dest('deploy'));
+    
 });

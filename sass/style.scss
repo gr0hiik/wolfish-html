@@ -1,8 +1,100 @@
-@import '../css/vendor/bootstrap.min';
-@import 'vendor/_mixins';
-@import 'mobile';
+/*! WOLFISH HTML - Basic HTML/CSS/JS template with Bootstrap grid system | Mateusz "michno" Michnowicz | mateusz.michnowicz@gmail.com !*/
+
+$white: #fff;
+$black: #111;
+
+// ADDITIONAL PLUGINS - BOOTSTRAP v4
+@import '../css/vendor/bootstrap-grid.min.css';
+
+// ADDITONAL PLUGINS - LIGHTBOX
+// @import '../css/vendor/lightbox.min.css'
+
+// ADDITIONAL PLUGINS - OWLCAROUSEL
+// @import '../css/vendor/owl.carousel.min.css';
+// @import '../css/vendor/owl.theme.default.min.css';
+
+html, body {
+    margin: 0;
+    padding:0;
+    font-size: 16px;
+
+    ::selection {
+        background: $black;
+        color: $white;
+    }
+}
 
 body {
-    background: white;
-    color: #333;
+    background: $white;
+    color: $black;
+    font-family: -apple-system, BlinkMacSystemFont, Arial, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+// SIMPLE MOBILE MENU STYLING
+
+.mm-trigger {
+    position: absolute;
+    right: 1rem;
+    top: 0.8rem;
+    display: block;
+    padding: 0.75rem 0.65rem;
+    background: $black;
+    color: $white;
+    text-decoration: none;
+    font-weight: 700;
+
+    span {
+        display: block;
+        height: 3px;
+        width: 20px;
+        margin: 3px;
+        background: $white;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba($black,.95);
+    text-align: center;
+    display: none;
+
+    .mm-close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        display: block;
+        padding: 0.75rem 1rem;
+        background: $white;
+        color: $black;
+        text-decoration: none;
+        font-weight: 700
+    }
+
+    ul {
+        margin: 0;
+        padding:0; 
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%,-50%);
+
+        li {
+            
+            a {
+                color: $white;
+                font-size: 2rem;
+                text-decoration: none;
+                padding: 1.5rem 0;
+                display: block;
+            }
+        }
+    }
 }
