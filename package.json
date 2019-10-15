@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass sass/ -o css/ --compressed",
+    "sass:watch": "node-sass -w sass/ -o css/",
+    "browsersync": "browser-sync start --server -w '*.html' './css/*'",
+    "dev": "npm-run-all --parallel browsersync sass:watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.24.5",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "gulp": "^3.9.1",
     "gulp-csso": "3.0.0",
     "gulp-imagemin": "^4.1.0",
