@@ -33,10 +33,50 @@ $(document).ready(function() {
         e.preventDefault();
 
         $('.mobile-menu').slideToggle(250);
-    })
+    });
 
     $('.mobile-menu ul li a').click(function() {
         $('.mobile-menu').slideToggle(250);
-    })
+    });
+
+    
+    function CookieInfo() {
+        var data = new Date();
+        var cookieBox = document.getElementById("cookie-info");
+        var nextData = data.toUTCString(data.setTime(data.getTime() + 1000 * 60 * 60 * 24 * 365));
+        
+        function setCookie() {
+            console.log(nextData);
+            document.cookie = "acceptCookieInfo=true; expires="+nextData+";path=/";
+            cookieBox.className = 'cookie-hidden';
+        }
+            
+        function isCookie() {
+            if (document.cookie!="") {
+                var cookieList = document.cookie.split("; ");
+                
+                for (var i=0; i<cookieList.length; i++) {
+                    var cookieName = cookieList[i].split("=")[0];
+                    var cookieVal = cookieList[i].split("=")[1];
+                    
+                    if (cookieName==="acceptCookieInfo") {
+                        return decodeURI(cookieVal);
+                    };
+                }
+            }
+        }
+        
+        if (isCookie() !== 'true') {        
+            var button = document.getElementById("cookie-button");
+            button.onclick = setCookie;
+            
+        } else {
+            cookieBox.className = 'cookie-hidden';
+        }
+    }
+    
+    CookieInfo();
 
 });
+
+

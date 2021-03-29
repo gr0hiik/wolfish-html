@@ -98,3 +98,56 @@ body {
         }
     }
 }
+
+.cookie-hidden {
+    display: none;
+}
+
+.cookie-info {
+    position: fixed;
+    z-index: 100;
+    width: 250px;
+    padding: 1rem;
+    background: rgba($black,0.85);
+    color: #fff;
+    bottom: 1rem;
+    right: 1rem;
+
+    h6 {
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    p {
+        font-size: 0.66rem;
+        line-height: 1.66;
+
+        a {
+            color: #fff;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    button {
+        background: $white;
+        color: $black;
+        border: 0;
+        font-family: Arial, Times, serif;
+        padding: 0.5rem;
+        display: block;
+        width: 100%;
+        font-size: .75rem;
+        text-align: center;
+        transition: 0.25s ease all;
+        font-weight: 700;
+
+        &:hover {
+            cursor: pointer;
+            background: darken($white,10%);
+        }
+    }
+}
