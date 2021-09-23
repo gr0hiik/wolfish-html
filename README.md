@@ -2,7 +2,7 @@ Wolfish HTML v2.1
 ======
 
 
-HTML, CSS and JavaScript basic template for static websites with extra boosters: Grid System form Bootstrap v4.3.1, jQuery v3.4.1, Lightbox 2, OwlCarousel v2.3.4 . Full list of additional packages can be find in package.json.\
+HTML, CSS and JavaScript basic template for static websites with extra boosters: Grid System form Bootstrap v5, jQuery v3.6.0, Lightbox 2, Tiny Slider 2. Full list of additional packages can be find in package.json.\
 \
 \
 To change files in your project, please modify files in ```/src``` folder.
