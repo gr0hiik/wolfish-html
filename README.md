@@ -1,4 +1,4 @@
-Wolfish HTML v2.2
+Wolfish HTML v2.2.1
 ======
 
 
